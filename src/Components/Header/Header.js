@@ -1,20 +1,24 @@
 import React from "react";
 import Logo from "../../Assets/Logo.png";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { style } from "./Header.style"
+import { CartWidget } from "../CartWidget/CartWidget";
 
 const Header = () => {
+
+    const categorias = [
+        { nombre: "Categoria 1", id: 0, ruta: "" },
+        { nombre: "Categoria 2", id: 1, ruta: "" },
+        { nombre: "Categoria 3", id: 2, ruta: "" },
+    ]
+
     return (
-        <header>
-            <img src={Logo} alt="Logo Tienda" />
+        <header style={style.container}>
+            <img style={style.img} src={Logo} alt="Logo Tienda" />
             <nav>
-                <a href="">Zapatillas</a>
-                <a href="">Buzos</a>
-                <a href="">Remeras</a>
-                <a href="">Accesorios</a>
-            </nav>
-            <button>
-                <ShoppingCartIcon/>
-            </button>
+                {categorias.map((categoria) => {
+                    return <a key={categoria.id} style={style.categorias} href={categoria.ruta}>{categoria.nombre}</a>
+                })}</nav>
+                <CartWidget/>
         </header>
     )
 }
