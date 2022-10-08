@@ -1,6 +1,7 @@
 export const style = {
     container:{
         display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
         textAlign: "center"
     },
