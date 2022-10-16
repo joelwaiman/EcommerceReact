@@ -1,32 +1,37 @@
-import React, {useEffect, useState} from "react";
-import { style } from "./ItemListContainer.style";
-import {ComponenteEstado} from "../../Cart/ComponenteEstado"
-
+import React, {useState, useEffect} from "react";
+import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
-    const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  
+  const { id } = useParams();
 
-    const URL_BASE = 'https://fakestoreapi.com/products'
+  const URL_BASE = 'https://fakestoreapi.com/products'
+  const URL_CAT = `${URL_BASE}/category/${id}`
 
-    useEffect(()=>{
-        const getProducts = async () => {
-            try{
-                const res = await fetch(URL_BASE)
-            }
-            catch{
-                console.log("Error");
-            }
-        }
-    })
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await fetch(URL_BASE);
+        const data = await res.json();
+        setProducts(data);
+      } catch {
+        console.log("error");
+      } finally {
+        setLoading(false);
+      }
+    };
+    getProducts();
+    }, [id])
 
     return (
-        <div style = {style.container}>
-            <h1 style = {style.title}></h1>
-            
-        </div>
-
-    )
-
-}
+        <>
+            {<>{loading ? <h1>Cargando...</h1> : <ItemList products={products} />}</>}
+        </>
+    );
+};
+    
 
 export default ItemListContainer
