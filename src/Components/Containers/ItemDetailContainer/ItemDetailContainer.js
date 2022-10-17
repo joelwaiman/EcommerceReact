@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router-dom";
 
 export const ItemDetailContainer = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const {idProducts} = useParams();
+
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await fetch("https://fakestoreapi.com/products/1")
+        const res = await fetch(`https://fakestoreapi.com/products/${idProducts}`)
         const data = await res.json();
         setProduct(data);
       } catch {
@@ -18,7 +21,7 @@ export const ItemDetailContainer = () => {
       }
     };
     getProducts();
-  }, []);
+  }, [idProducts]);
 
   return (
     <>
