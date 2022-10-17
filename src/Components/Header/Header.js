@@ -5,13 +5,12 @@ import { CartWidget } from "../CartWidget/CartWidget";
 import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
-
-    const categorias = [
-        { nombre: "Electronics", id: 0, ruta: "/categoria/Electronics" },
-        { nombre: "Jewelery", id: 1, ruta: "/categoria/Jewelery" },
-        { nombre: "Men's clothing", id: 2, ruta: "/categoria/Men's clothing" },
-        { nombre: "Women's clothing", id: 3, ruta: "/categoria/Women's clothing" },
-    ]
+  const categorias = [
+    { nombre: "Electronics", id: 0, ruta: "/categoria/electronics" },
+    { nombre: "Jewelery", id: 1, ruta: "/categoria/jewelery" },
+    { nombre: "Men's clothing", id: 2, ruta: "/categoria/men's clothing" },
+    { nombre: "Women's clothing", id: 3, ruta: "/categoria/women's clothing" },
+  ];
 
     return (
         <header style={style.container}>
@@ -21,7 +20,13 @@ const Header = () => {
             
             <nav>
                 {categorias.map((categoria) => {
-                    return <Link key={categoria.id} style={style.categorias} to={categoria.ruta}>{categoria.nombre}</Link>
+                    return <NavLink
+                     key={categoria.id}
+                     style={style.categorias}
+                     to={categoria.ruta}
+                     >
+                        {categoria.nombre}
+                        </NavLink>
                 })}</nav>
                 <Link to="/cart">
                     <CartWidget/>

@@ -6,15 +6,15 @@ const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   
-  const { id } = useParams();
+  const { idCategory } = useParams();
 
   const URL_BASE = 'https://fakestoreapi.com/products'
-  const URL_CAT = `${URL_BASE}/category/${id}`
+  const URL_CAT = `${URL_BASE}/category/${idCategory}`
 
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await fetch(URL_BASE);
+        const res = await fetch(idCategory? URL_CAT : URL_BASE);
         const data = await res.json();
         setProducts(data);
       } catch {
@@ -24,7 +24,7 @@ const ItemListContainer = () => {
       }
     };
     getProducts();
-    }, [id])
+    }, [idCategory])
 
     return (
         <>
