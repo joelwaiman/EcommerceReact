@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-export const ComponenteEstado = ({stock, onAdd}) => {
-    const [contador, setContador] = useState(1);
+export const ItemCount = ({stock, initial, onAdd}) => {
+    const [contador, setContador] = useState(initial);
 
     const HandlerClickSumar = () => {
         if(contador < stock){
@@ -20,12 +20,12 @@ export const ComponenteEstado = ({stock, onAdd}) => {
     };
 
     return (
-    <div>
-        <h1>Componente contador</h1>
+    <>
+        <h3>{contador}</h3>
         <button onClick = {HandlerClickRestar}>-</button>
         <p>{contador}</p>
         <button onClick = {HandlerClickSumar}>+</button> <br />
         <button onClick = {HandlerClickAgregar}>Agregar al carrito</button>
-    </div>
+    </>
     )
 };
