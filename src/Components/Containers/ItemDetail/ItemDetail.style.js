@@ -8,7 +8,7 @@ export const styles = {
     margin: 'auto',
     marginTop: 50,
     width: 450,
-    height: 650,
+    height: 700,
     borderRadius: 30,
     background: '#e0e0e0',
     boxshadow: '15px 15px 30px #bebebe -15px -15px 30px #ffffff'},
