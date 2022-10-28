@@ -10,7 +10,6 @@ export const CartWidget = () => {
         <>
             <p>{qty}</p>
                 <ShoppingCartIcon style={style.i} />
-            
         </>
 
     )

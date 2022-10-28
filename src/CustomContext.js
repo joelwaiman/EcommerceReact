@@ -1,4 +1,4 @@
-import React, {createContext , useState} from "react";
+import React, {createContext , useState, useEffect} from "react";
 
 export const Context = createContext();
 
@@ -8,19 +8,27 @@ export const CustomProvider = ({children}) => {
     const [total, setTotal] = useState(0)
 
     const addItem = (item, cantidad)=>{
-        console.log(`Esta funcion agrega ${cantidad} cantidades de el producto ${item}`);
+        IsInCart(item.id)
     }
 
-    const deleteItem = ()=>{
-
+    const deleteItem = (id)=>{
+        setCart(cart.filter(item => item.id !== id))
     }
 
-    const actualizarTotales = ()=>{
 
-    }
+    useEffect(()=>{
+        const cantidad = 0;
+        const totalC = 0;
+        cart.forEach(item =>{
+            cantidad += item.cantidad;
+            totalC += (item.price * item.cantidad)
+        });
+        setQty(cantidad);
+        setTotal(totalC);
+    }, [cart]);
 
-    const IsInCart = ()=>{
-
+    const IsInCart = (id)=>{
+        cart.some(item=>item.id === id)
     }
 
     const clear = ()=>{
