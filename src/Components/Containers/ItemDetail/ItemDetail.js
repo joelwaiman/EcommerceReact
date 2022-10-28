@@ -6,11 +6,10 @@ import { Context } from "../../../CustomContext";
 
 const ItemDetail = ({ product}) => {
   const [showItemCount, setshowItemCount] = useState(false)
-  const resultado = useContext(Context)
-  console.log(resultado);
+  const {addItem} = useContext(Context);
 
   const onAdd = (contador)=> {
-    console.log("se agregan " + contador + " unidades");
+    addItem(product, contador)
     setshowItemCount(true);
   }
 
