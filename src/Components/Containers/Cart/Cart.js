@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import { Context } from '../../../CustomContext';
 import { Link } from 'react-router-dom';
+import ItemCart from './ItemCart';
 
 
 export const Cart = () => {
-    const { cart } = useContext(Context);
+    const { cart, total } = useContext(Context);
+
+    
     return (
         <>
             {cart.length === 0 ?
@@ -13,11 +16,21 @@ export const Cart = () => {
                 </h2>
                 :
                 <>
-                    {cart.map((product) => {
-                        <h2 key={product.id}>product.title</h2>
+                    {cart.map((producto) => {
+                        return <ItemCart key={producto.id} producto = {producto}/>
+                        
                     })}
                 </>
             }
+            <h4 style={styles.total}>Total:${total}</h4>
         </>
     )
+}
+
+const styles = {
+    total:{
+        maxWidth: 950,
+        margin: 'auto',
+        textAlign: 'right'
+    }
 }
