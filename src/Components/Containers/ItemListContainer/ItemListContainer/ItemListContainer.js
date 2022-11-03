@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import { getDocs, collection, query, where } from "firebase/firestore"
+import { db } from "../../../../firebase/firebase";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
@@ -8,23 +10,48 @@ const ItemListContainer = () => {
   
   const { idCategory } = useParams();
 
-  const URL_BASE = 'https://fakestoreapi.com/products'
-  const URL_CAT = `${URL_BASE}/category/${idCategory}`
+
+
+  const productsCollection = collection(db, 'productos')
 
   useEffect(() => {
     const getProducts = async () => {
-      try {
-        const res = await fetch(idCategory? URL_CAT : URL_BASE);
-        const data = await res.json();
+      try{
+        const result = await getDocs(productsCollection);
+        const listProducts = await result.json();
         setProducts(data);
-      } catch {
-        console.log("error");
-      } finally {
-        setLoading(false);
-      }
+        }catch{
+          console.log("error");
+        }
+        finally{
+          setLoading(false)
+        }
     };
-    getProducts();
-    }, [idCategory])
+    getProducts()
+    
+    
+
+
+
+
+
+
+
+
+
+    // /const getProducts = async () => {
+    //   try {
+    //     const res = await fetch(idCategory? URL_CAT : URL_BASE);
+    //     const data = await res.json();
+    //     setProducts(data);
+    //   } catch {
+    //     console.log("error");
+    //   } finally {
+    //     setLoading(false);
+    //   }
+    // };
+    // getProducts();
+    },)
 
     return (
         <>
