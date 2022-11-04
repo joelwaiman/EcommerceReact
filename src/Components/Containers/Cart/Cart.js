@@ -18,7 +18,6 @@ export const Cart = () => {
                 <>
                     {cart.map((producto) => {
                         return <ItemCart key={producto.id} producto = {producto}/>
-                        
                     })}
                 </>
             }

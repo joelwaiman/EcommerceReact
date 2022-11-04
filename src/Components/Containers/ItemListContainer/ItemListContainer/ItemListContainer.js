@@ -3,6 +3,7 @@ import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { getDocs, collection, query, where } from "firebase/firestore"
 import { db } from "../../../../firebase/firebase";
+import Item from "../Item/Item";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
@@ -18,7 +19,12 @@ const ItemListContainer = () => {
     const getProducts = async () => {
       try{
         const result = await getDocs(categoryProducts);
-        const listProducts = result.docs.map(doc => doc.data());
+        const listProducts = result.docs.map((item)=>{
+          return{
+            ...item.data(),
+            id:item.id,
+          }
+        });
         setProducts(listProducts);
         }catch{
           console.log("error");
