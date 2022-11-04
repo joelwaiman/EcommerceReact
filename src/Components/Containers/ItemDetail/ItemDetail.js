@@ -20,7 +20,7 @@ const ItemDetail = ({ product}) => {
       <span>{product.description}</span>
       <h2>${product.price}</h2>
       {!showItemCount? (
-      <ItemCount stock={10} initial={1} onAdd={onAdd}/>
+      <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/>
       ) : <Link to = "/cart">
         <button>Finalizar Compra</button>
       </Link> }

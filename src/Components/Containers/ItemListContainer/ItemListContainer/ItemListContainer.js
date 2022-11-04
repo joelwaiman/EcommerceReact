@@ -10,16 +10,16 @@ const ItemListContainer = () => {
   
   const { idCategory } = useParams();
 
-
-
-  const productsCollection = collection(db, 'productos')
+  const allProducts = collection(db, 'productos');
+  const categoryProducts = idCategory? query(allProducts, where('category', '==', idCategory)) : allProducts
+  
 
   useEffect(() => {
     const getProducts = async () => {
       try{
-        const result = await getDocs(productsCollection);
-        const listProducts = await result.json();
-        setProducts(data);
+        const result = await getDocs(categoryProducts);
+        const listProducts = result.docs.map(doc => doc.data());
+        setProducts(listProducts);
         }catch{
           console.log("error");
         }
@@ -28,37 +28,22 @@ const ItemListContainer = () => {
         }
     };
     getProducts()
-    
-    
+    },[idCategory])
 
-
-
-
-
-
-
-
-
-    // /const getProducts = async () => {
-    //   try {
-    //     const res = await fetch(idCategory? URL_CAT : URL_BASE);
-    //     const data = await res.json();
-    //     setProducts(data);
-    //   } catch {
-    //     console.log("error");
-    //   } finally {
-    //     setLoading(false);
-    //   }
-    // };
-    // getProducts();
-    },)
 
     return (
-        <>
+        <div style={styles.background}>
             {<>{loading ? <h1>Cargando...</h1> : <ItemList products={products} />}</>}
-        </>
+        </div>
     );
 };
     
 
 export default ItemListContainer
+
+const styles ={
+  background: {
+    backgroundColor: '#DDDDDD',
+    maxHeight: '100%'
+  }
+}

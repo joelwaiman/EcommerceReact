@@ -6,10 +6,9 @@ import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
   const categorias = [
-    { nombre: "Electronics", id: 0, ruta: "/categoria/electronics" },
-    { nombre: "Jewelery", id: 1, ruta: "/categoria/jewelery" },
-    { nombre: "Men's clothing", id: 2, ruta: "/categoria/men's clothing" },
-    { nombre: "Women's clothing", id: 3, ruta: "/categoria/women's clothing" },
+    { nombre: "Sneakers", id: 0, ruta: "/categoria/Sneakers" },
+    { nombre: "Buzos", id: 1, ruta: "/categoria/Buzos" },
+    { nombre: "Accesorios", id: 2, ruta: "/categoria/Accesorios" },
   ];
 
     return (
