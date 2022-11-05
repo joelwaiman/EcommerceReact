@@ -3,7 +3,7 @@ export const style = {
         display: 'flex',
         justifyContent: 'space-around',
         alignItems: 'center',
-        backgroundColor: '#222831',
+        backgroundColor: '#B2B2B2',
     },
     img:{
 
@@ -12,6 +12,6 @@ export const style = {
         margin: 25,
         fontSize: 25,
         textDecoration: 'none',
-        color: '#EDEDED'
+        color: '#3C4048'
     }
 }

@@ -5,31 +5,30 @@ import { getDoc, collection, doc } from "firebase/firestore"
 import { db } from "../../../firebase/firebase";
 
 export const ItemDetailContainer = () => {
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
 
-  const { idProduct } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-    const allProducts = collection(db, "productos")
-    const productDetail = doc (allProducts, idProduct)
+    const productCollection = collection(db, "productos");
+    const product = doc(productCollection, id);
 
     const getProducts = async () => {
-      try {
-        const result = await getDoc(productDetail);
-        const item = await result.json()
+      try{
+        const item = await getDoc(product)
         setProduct({
-          id: item.id,
           ...item.data(),
+          id:item.id,
         })
-      } catch {
+      } catch{
         console.log("error");
       }
-      finally {
+      finally{
         setLoading(false)
       }
     }; getProducts()
-  }, [idProduct])
+  }, [id]);
 
 
   return (

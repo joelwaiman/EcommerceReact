@@ -3,7 +3,6 @@ import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { getDocs, collection, query, where } from "firebase/firestore"
 import { db } from "../../../../firebase/firebase";
-import Item from "../Item/Item";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
@@ -11,11 +10,13 @@ const ItemListContainer = () => {
   
   const { idCategory } = useParams();
 
-  const allProducts = collection(db, 'productos');
-  const categoryProducts = idCategory? query(allProducts, where('category', '==', idCategory)) : allProducts
+
   
 
   useEffect(() => {
+    const allProducts = collection(db, 'productos');
+    const categoryProducts = idCategory? query(allProducts, where('category', '==', idCategory)) : allProducts
+
     const getProducts = async () => {
       try{
         const result = await getDocs(categoryProducts);
@@ -49,7 +50,7 @@ export default ItemListContainer
 
 const styles ={
   background: {
-    backgroundColor: '#DDDDDD',
+    backgroundColor: '#EAEAEA',
     maxHeight: '100%'
   }
 }

@@ -10,10 +10,9 @@ export const styles = {
     width: 450,
     height: 700,
     borderRadius: 30,
-    background: '#e0e0e0',
+    background: '#f6f6f6',
     boxshadow: '15px 15px 30px #bebebe -15px -15px 30px #ffffff'},
   img:{
-    maxHeight: 250,
     maxWidth: 250,
   },
   title:{

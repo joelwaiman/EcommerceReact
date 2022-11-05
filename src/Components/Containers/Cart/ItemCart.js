@@ -21,7 +21,7 @@ const styles = {
         maxWidth: 950,
         margin: 'auto',
         marginTop: 35,
-        backgroundColor: 'grey',
+        backgroundColor: 'f6f6f6',
         padding: 10,
         borderRadius: 10
     },
