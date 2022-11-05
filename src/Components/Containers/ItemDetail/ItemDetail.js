@@ -1,14 +1,14 @@
-import React, {useState, useContext} from "react";
-import {styles} from "./ItemDetail.style"
+import React, { useState, useContext } from "react";
+import { styles } from "./ItemDetail.style"
 import { ItemCount } from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import { Context } from "../../../CustomContext";
 
-const ItemDetail = ({ product}) => {
+const ItemDetail = ({ product }) => {
   const [showItemCount, setshowItemCount] = useState(false)
-  const {addItem} = useContext(Context);
+  const { addItem } = useContext(Context);
 
-  const onAdd = (contador)=> {
+  const onAdd = (contador) => {
     addItem(product, contador)
     setshowItemCount(true);
   }
@@ -19,11 +19,11 @@ const ItemDetail = ({ product}) => {
       <h1>{product.title}</h1>
       <span>{product.description}</span>
       <h2>${product.price}</h2>
-      {!showItemCount? (
-      <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/>
-      ) : <Link to = "/cart">
+      {!showItemCount ? (
+        <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
+      ) : <Link to="/cart">
         <button>Finalizar Compra</button>
-      </Link> }
+      </Link>}
     </div>
   );
 };

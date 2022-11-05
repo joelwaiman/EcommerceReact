@@ -8,18 +8,20 @@ export const ItemDetailContainer = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const { id } = useParams();
-
-  const allProducts = collection(db, "productos")
-  const productDetail = doc (allProducts, id)
-
+  const { idProduct } = useParams();
 
   useEffect(() => {
+    const allProducts = collection(db, "productos")
+    const productDetail = doc (allProducts, idProduct)
+
     const getProducts = async () => {
       try {
         const result = await getDoc(productDetail);
-        const item = await result.json();
-        setProduct(item)
+        const item = await result.json()
+        setProduct({
+          id: item.id,
+          ...item.data(),
+        })
       } catch {
         console.log("error");
       }
@@ -27,7 +29,7 @@ export const ItemDetailContainer = () => {
         setLoading(false)
       }
     }; getProducts()
-  }, [id])
+  }, [idProduct])
 
 
   return (
