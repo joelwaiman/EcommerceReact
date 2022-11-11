@@ -3,7 +3,6 @@ import {styles} from "./Item.style"
 import { Link } from "react-router-dom";
 
 const Item = ({ product }) => {
-    console.log(product.id);
   return (
     <div style={styles.card}>
       <img style={styles.img} alt={product.title} src={product.image} />

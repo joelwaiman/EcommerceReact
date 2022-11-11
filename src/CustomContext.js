@@ -6,20 +6,31 @@ export const CustomProvider = ({children}) => {
     const [cart, setCart] = useState([]);
     const [qty, setQty] = useState(0);
     const [total, setTotal] = useState(0)
+    const [userInfo, setUserInfo] = useState()
 
     const addItem = (item, cantidad)=>{
-        if (IsInCart(item.id)){
-            const found = cart.find(producto => producto.id === item.id);
-            const index = cart.indexOf(found);
-            const aux = [...cart];
-            aux[index].cantidad += cantidad;
-            setCart(aux);
+        if(IsInCart(item.id)){
+            const modificado = cart.map((producto) => {
+                if (producto.id === item.id) {
+                    producto.cantidad += cantidad;
+                    }
+                    return producto;
+                });
+                setCart(modificado);
+        }else{
+            setCart([...cart, {...item, cantidad}])
+        }     
+
+    }
+
+    const addUserInfo = (nombre, apellido, email, id)=>{
+        const myInfo ={
+            nombre: nombre,
+            apellido: apellido,
+            email: email,
+            id: id
         }
-        else{
-            setCart([...cart, {...item , cantidad}])
-        }
-        setQty(qty + cantidad);
-        setTotal (total + (item.price * cantidad))
+        setUserInfo(myInfo)
     }
 
     const deleteItem = (id)=>{
@@ -30,7 +41,7 @@ export const CustomProvider = ({children}) => {
     }
 
     const IsInCart = (id)=>{
-        cart.some(item=>item.id === id)
+        return cart.some(item => item.id === id);
     }
 
     const clear = ()=>{
@@ -40,7 +51,7 @@ export const CustomProvider = ({children}) => {
     }
     
     return(
-        <Context.Provider value={{cart, qty, total, addItem, deleteItem, clear}}>
+        <Context.Provider value={{cart, qty, total, userInfo,addUserInfo, addItem, deleteItem, clear}}>
         {children}
         </Context.Provider>
     )

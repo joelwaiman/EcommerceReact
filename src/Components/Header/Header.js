@@ -27,7 +27,7 @@ const Header = () => {
                         {categoria.nombre}
                         </NavLink>
                 })}</nav>
-                <Link to="/cart">
+                <Link to="/cart" style={style.count}>
                     <CartWidget/>
                 </Link>
                 

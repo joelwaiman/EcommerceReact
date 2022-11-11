@@ -5,8 +5,7 @@ export const styles = {
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: 'auto',
-    marginTop: 50,
+    margin: '50px auto',
     width: 450,
     height: 700,
     borderRadius: 30,
@@ -20,5 +19,15 @@ export const styles = {
   },
   text: {
     fontSize: '100%',
-  }
+  },
+  button : {
+    margin : '1px 10px' ,
+    fontSize: 17,
+    padding: '0.5rem 2rem',
+    border: 'transparent',
+    boxShadow: '2px 2px 4px rgba(0,0,0,0.4)',
+    background: '#F05454',
+    color: 'white',
+    borderRadius: 4,
+}
 }

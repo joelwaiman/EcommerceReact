@@ -5,6 +5,8 @@ import { Cart } from "./Components/Containers/Cart/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header/Header"
 import { CustomProvider } from "./CustomContext";
+import Formulario from "./Components/Containers/Formulario/formulario"
+import Congrats from "./Components/Containers/CongratsPage/Congrats";
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
             <Route path="/categoria/:idCategory" element={<ItemListContainer />} />
             <Route path="/producto/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/Formulario" element={<Formulario />} />
+            <Route path="/Congrats" element={<Congrats />} />
           </Routes>
         </CustomProvider>
       </BrowserRouter>

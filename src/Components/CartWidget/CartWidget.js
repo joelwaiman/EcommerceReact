@@ -11,10 +11,10 @@ export const CartWidget = () => {
             {qty === 0 ?
             <ShoppingCartIcon style={style.i} />
             :
-            <>
+            <div style={style.cart}>
             <ShoppingCartIcon style={style.i} />
-                <p>{qty}</p>
-            </>
+                <p style={style.count}><b>{qty}</b></p>
+            </div>
 }
         </>
 
