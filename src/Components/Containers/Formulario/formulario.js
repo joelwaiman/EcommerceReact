@@ -25,7 +25,7 @@ const Formulario = () => {
 
 
 
-    const { cart, total, clear, addUserInfo } = useContext(Context);
+    const { cart, total, addUserInfo } = useContext(Context);
 
     const finalizarCompra = (e) => {
         const ventasCollection = collection(db, "ventas");
@@ -39,8 +39,7 @@ const Formulario = () => {
                 addUserInfo(usuario.nombre, usuario.apellido, usuario.email, result.id)
                 navigate("/Congrats")
             });
-        e.preventDefault();
-        clear();
+        e.preventDefault();;
     }
 
     return (
