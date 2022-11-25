@@ -19,7 +19,9 @@ export const CustomProvider = ({children}) => {
                 setCart(modificado);
         }else{
             setCart([...cart, {...item, cantidad}])
-        }     
+        }
+        setQty(qty + cantidad);
+        setTotal( total + (item.price * cantidad));
 
     }
 
