@@ -17,13 +17,14 @@ export const styles = {
       maxWidth: '50%',
     },
     title: {
-      fontSize: '100%'
+      fontSize: '100%',
+      maxWidth:'12rem'
     },
     text: {
       fontSize: '100%',
     },
     button : {
-        margin : '1px 10px' ,
+        margin : '3.5rem 1rem' ,
         fontSize: 17,
         padding: '0.5rem 2rem',
         border: 'transparent',

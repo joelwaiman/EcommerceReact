@@ -35,7 +35,7 @@ const styles = {
         alignItems: 'center',
     },
     button : {
-        margin : '1px 10px' ,
+        margin : '7px 10px' ,
         fontSize: 17,
         padding: '0.5rem 2rem',
         border: 'transparent',

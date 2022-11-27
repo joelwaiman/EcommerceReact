@@ -16,14 +16,16 @@ const ItemDetail = ({ product }) => {
   return (
     <div style={styles.card}>
       <img style={styles.img} alt={product.title} src={product.image} />
-      <h1>{product.title}</h1>
-      <span>{product.description}</span>
-      <h2>${product.price}</h2>
-      {!showItemCount ? (
-        <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
-      ) : <Link to="/cart">
-        <button style={styles.button}>Finalizar Compra</button>
-      </Link>}
+      <div style={styles.infoContainer}>
+        <h1 style={styles.title}>{product.title}</h1>
+        <h3>${product.price}</h3>
+        <span style={styles.text}>{product.description}</span>
+        {!showItemCount ? (
+          <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
+        ) : <Link to="/cart">
+          <button style={styles.button}>Finalizar Compra</button>
+        </Link>}
+      </div>
     </div>
   );
 };

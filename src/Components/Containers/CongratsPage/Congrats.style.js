@@ -10,20 +10,33 @@ export const style = {
         borderRadius: 10,
         marginTop: 35,
     },
-    producto: {
+    containerInfo:{
         display: 'flex',
-        alignItems: 'center'
+        flexDirection: 'row',
+        alignItems: 'center',
+        margin: '1rem',
+        backgroundColor: '#e6e6e6',
+        borderRadius: 10,
     },
-    compra: {
-        display: 'flex',
-        backgroundColor: '#B2B2B2',
+    infoBuy:{
+        padding: '1rem'
     },
-    user:{
+    producto:{
         display:'flex',
-        flexDirection: 'column'
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginTop: 5
     },
-    img: {
+    img:{
         width: 75,
         height: 75,
     },
+    title:{
+        margin: 10,
+        maxWidth:200,
+        textAlign: 'center'
+    },
+    text:{
+        margin: 10,
+    }
 }
