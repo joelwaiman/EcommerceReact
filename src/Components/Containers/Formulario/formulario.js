@@ -23,9 +23,7 @@ const Formulario = () => {
         setUsuario(nuevosDatos)
     }
 
-
-
-    const { cart, total, addUserInfo } = useContext(Context);
+    const { cart, total, addUserInfo, userInfo } = useContext(Context);
 
     const finalizarCompra = (e) => {
         const ventasCollection = collection(db, "ventas");
@@ -42,6 +40,13 @@ const Formulario = () => {
         e.preventDefault();;
     }
 
+        let isInvalid = false
+
+        if(!userInfo || userInfo === ""){
+            isInvalid=true
+        }
+    
+
     return (
         <div style={styles.container}>
             <h3 style={styles.titulo}> Ingresar Usuario</h3>
@@ -49,8 +54,7 @@ const Formulario = () => {
                     <input style={styles.input} name="nombre" type="text" placeholder="Ingrese su Nombre" onChange={capturarInputs}/>
                     <input style={styles.input} name="apellido" type="text" placeholder="Ingrese su Apellido" onChange={capturarInputs}/>
                     <input style={styles.input} name="email" type="email" placeholder="Ingrese su Email" onChange={capturarInputs}/>
-                    <input style={styles.button} value="Enviar" type="submit"/>
-                    
+                    <input disabled={isInvalid} style={styles.button} value="Enviar" type="submit"/>
                 </form>
         </div>
     )
