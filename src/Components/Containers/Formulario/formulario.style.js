@@ -30,5 +30,15 @@ export const styles = {
         background: '#F05454',
         color: 'white',
         borderRadius: 4,
+    },
+    buttonSubmit : {
+        margin : '1px 10px' ,
+        fontSize: 17,
+        padding: '0.5rem 2rem',
+        border: 'transparent',
+        boxShadow: '2px 2px 4px rgba(0,0,0,0.4)',
+        background: 'grey',
+        color: 'white',
+        borderRadius: 4,
     }
 }

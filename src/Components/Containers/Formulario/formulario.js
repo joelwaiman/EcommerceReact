@@ -5,25 +5,24 @@ import { Context } from '../../../CustomContext';
 import { db } from "../../../firebase/firebase";
 import { collection, addDoc, serverTimestamp} from "firebase/firestore"
 
+
+const valorInicial = {
+    nombre: '',
+    apellido:'',
+    email:''
+}
+
 const Formulario = () => {
 
     const navigate = useNavigate();
-
-    const valorInicial = {
-        nombre: '',
-        apellido:'',
-        email:''
-    }
-
     const [usuario, setUsuario] = useState(valorInicial)
+    const { cart, total, addUserInfo } = useContext(Context);
 
     const capturarInputs = (e) => {
         const {name, value} = e.target;
         const nuevosDatos = ({...usuario, [name]: value})
         setUsuario(nuevosDatos)
     }
-
-    const { cart, total, addUserInfo, userInfo } = useContext(Context);
 
     const finalizarCompra = (e) => {
         const ventasCollection = collection(db, "ventas");
@@ -40,11 +39,14 @@ const Formulario = () => {
         e.preventDefault();;
     }
 
-        let isInvalid = false
-
-        if(!userInfo || userInfo === ""){
-            isInvalid=true
+    let isValid = false
+        if((!usuario.email || !usuario.email === "")&&
+        (!usuario.nombre || !usuario.nombre === "")&&
+        (!usuario.apellido || !usuario.apellido === "")){
+            isValid=true
         }
+
+        const buttonClass = !usuario ? styles.button : styles.buttonSubmit
     
 
     return (
@@ -54,7 +56,7 @@ const Formulario = () => {
                     <input style={styles.input} name="nombre" type="text" placeholder="Ingrese su Nombre" onChange={capturarInputs}/>
                     <input style={styles.input} name="apellido" type="text" placeholder="Ingrese su Apellido" onChange={capturarInputs}/>
                     <input style={styles.input} name="email" type="email" placeholder="Ingrese su Email" onChange={capturarInputs}/>
-                    <input disabled={isInvalid} style={styles.button} value="Enviar" type="submit"/>
+                    <input disabled={isValid} style={buttonClass} value="Enviar" type="submit"/>
                 </form>
         </div>
     )
