@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
+
 import ItemDetail from "../ItemDetail/ItemDetail";
+import Spinner from "../../Spinner/spinner";
+
 import { useParams } from "react-router-dom";
+
 import { getDoc, collection, doc } from "firebase/firestore"
 import { db } from "../../../firebase/firebase";
 
@@ -33,7 +37,7 @@ export const ItemDetailContainer = () => {
 
   return (
     <>
-      {<>{loading ? <h1>Cargando...</h1> : <ItemDetail product={product} />}</>}
+      {<>{loading ? <Spinner/> : <ItemDetail product={product} />}</>}
     </>
   );
 };

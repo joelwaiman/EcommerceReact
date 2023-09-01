@@ -1,34 +1,42 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { Context } from "../../../CustomContext";
+import { FaTrash } from "react-icons/fa";
 
-const ItemCart = ({producto}) => {
-    const {deleteItem} = useContext(Context)
-    return(
+const ItemCart = ({ producto }) => {
+    const { deleteItem } = useContext(Context)
+    return (
         <div style={styles.contenedor}>
             <img style={styles.img} src={producto.image} alt={producto.title} />
             <h4 key={producto.id}>{producto.title}</h4>
             <p>Cantidad: {producto.cantidad}</p>
             <p>${producto.price * producto.cantidad}</p>
-            <button onClick={()=>deleteItem(producto.id)}>Borrar</button>
-         </div>
-         )}
+            <button style={styles.delete} onClick={() => deleteItem(producto.id)}>
+                <FaTrash />
+            </button>
+        </div>
+    )
+}
 
 const styles = {
-    contenedor:{
+    contenedor: {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        maxWidth: 950,
-        margin: 'auto',
-        marginTop: 35,
+        width: '100%',
         backgroundColor: '#f6f6f6',
         padding: 10,
         borderRadius: 10
     },
-    img:{
+    img: {
         width: 75,
         height: 75,
     },
+    delete: {
+        border: 'none',
+        color: 'red',
+        cursor: 'pointer',
+        fontSize: 17,
+    }
 }
 
 export default ItemCart;

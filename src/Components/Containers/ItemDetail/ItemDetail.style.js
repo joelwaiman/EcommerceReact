@@ -4,10 +4,11 @@ export const styles = {
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'space-around',
-    margin: '50px auto',
-    width: '90%',
+    margin: '80px auto',
+    width: '80%',
     height: '90%',
-    borderRadius: 30,
+    border: '1px solid #DDE6ED',
+    borderRadius: 10,
     background: '#f6f6f6',
     boxshadow: '15px 15px 30px #bebebe -15px -15px 30px #ffffff'},
   img:{
@@ -17,19 +18,24 @@ export const styles = {
     display:'flex',
     flexDirection: 'column',
     alignItems:'center',
-    backgroundColor: '#EAEAEA',
-    borderRadius: 5,
-    width: 350,
+    border: '2px solid #DDE6ED',
+    borderRadius: 2,
+    width: '30%',
     height: '100%',
     padding: 25,
-    margin: '20px 0px'
+    margin: '20px 0px',
   },
   title:{
-    fontSize: 23,
+    fontSize: 27,
+    fontWeight: 600,
     margin: '25px 0px'
   },
+  price:{
+    fontSize: 21,
+    fontWeight: 400
+  },
   text: {
-    fontSize: 17,
+    fontSize: 16,
     margin: '25px 0'
   },
   button : {
@@ -38,7 +44,7 @@ export const styles = {
     padding: '0.5rem 2rem',
     border: 'transparent',
     boxShadow: '2px 2px 4px rgba(0,0,0,0.4)',
-    background: '#F05454',
+    background: '#9DB2BF',
     color: 'white',
     borderRadius: 4,
 },

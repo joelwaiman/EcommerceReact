@@ -17,8 +17,8 @@ const ItemDetail = ({ product }) => {
     <div style={styles.card}>
       <img style={styles.img} alt={product.title} src={product.image} />
       <div style={styles.infoContainer}>
-        <h1 style={styles.title}>{product.title}</h1>
-        <h3>${product.price}</h3>
+        <p style={styles.title}>{product.title}</p>
+        <p style={styles.price}>${product.price}</p>
         <span style={styles.text}>{product.description}</span>
         {!showItemCount ? (
           <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />

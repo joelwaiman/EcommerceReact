@@ -5,9 +5,9 @@ export const style = {
     },
     i:{
         fontSize : 30,
-        color: '#3C4048'
+        color: '#FAF0E6'
     },
     count:{
-        color:'#3C4048',
+        color:'#FAF0E6',
     },
 }

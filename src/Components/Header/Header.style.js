@@ -3,7 +3,7 @@ export const style = {
         display: 'flex',
         justifyContent: 'space-around',
         alignItems: 'center',
-        backgroundColor: '#B2B2B2',
+        backgroundColor: '#726A95',
     },
     img:{
         maxWidth: 100
@@ -12,7 +12,7 @@ export const style = {
         margin: 25,
         fontSize: 25,
         textDecoration: 'none',
-        color: '#3C4048'
+        color: '#FAF0E6'
     },
     count:{
         textDecoration:'none',

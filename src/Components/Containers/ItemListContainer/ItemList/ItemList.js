@@ -14,11 +14,12 @@ const ItemList = ({ products }) => {
 const styles = {
   container: {
     display: "flex",
+    maxWidth: '70%',
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
     flexWrap: "wrap",
-    padding: 50
+    gap: 10
   }
 
 }
