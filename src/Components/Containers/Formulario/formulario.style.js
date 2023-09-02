@@ -27,9 +27,10 @@ export const styles = {
         padding: '0.5rem 2rem',
         border: 'transparent',
         boxShadow: '2px 2px 4px rgba(0,0,0,0.4)',
-        background: '#F05454',
+        background: '#9DB2BF',
         color: 'white',
         borderRadius: 4,
+        cursor: 'pointer'
     },
     buttonSubmit : {
         margin : '1px 10px' ,

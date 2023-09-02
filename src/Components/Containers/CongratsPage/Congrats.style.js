@@ -6,7 +6,7 @@ export const style = {
         maxWidth: 950,
         margin: 'auto',
         backgroundColor: '#f6f6f6',
-        padding: 10,
+        padding: 10 ,
         borderRadius: 10,
         marginTop: 35,
     },
@@ -16,7 +16,8 @@ export const style = {
         alignItems: 'center',
         margin: '1rem',
         backgroundColor: '#e6e6e6',
-        borderRadius: 10,
+        borderRadius: 5,
+        padding: '15px 10px'
     },
     infoBuy:{
         padding: '1rem'
@@ -38,5 +39,16 @@ export const style = {
     },
     text:{
         margin: 10,
-    }
+    },
+    button:{
+        margin : '1px 10px' ,
+        fontSize: 17,
+        padding: '0.5rem 2rem',
+        border: 'transparent',
+        boxShadow: '2px 2px 4px rgba(0,0,0,0.4)',
+        background: '#9DB2BF',
+        color: 'white',
+        borderRadius: 4,
+        cursor: 'pointer'
+    },
 }

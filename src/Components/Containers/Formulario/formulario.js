@@ -40,13 +40,11 @@ const Formulario = () => {
     }
 
     let isValid = false
-        if((!usuario.email || !usuario.email === "")&&
-        (!usuario.nombre || !usuario.nombre === "")&&
-        (!usuario.apellido || !usuario.apellido === "")){
-            isValid=true
-        }
+    if (usuario.nombre && usuario.apellido && usuario.email !== '') {
+        isValid = true;
+      }
 
-        const buttonClass = !usuario ? styles.button : styles.buttonSubmit
+        const buttonClass = isValid ? styles.button : styles.buttonSubmit
     
 
     return (
@@ -56,7 +54,7 @@ const Formulario = () => {
                     <input style={styles.input} name="nombre" type="text" placeholder="Ingrese su Nombre" onChange={capturarInputs}/>
                     <input style={styles.input} name="apellido" type="text" placeholder="Ingrese su Apellido" onChange={capturarInputs}/>
                     <input style={styles.input} name="email" type="email" placeholder="Ingrese su Email" onChange={capturarInputs}/>
-                    <input disabled={isValid} style={buttonClass} value="Enviar" type="submit"/>
+                    <input disabled={!isValid} style={buttonClass} value="Enviar" type="submit"/>
                 </form>
         </div>
     )

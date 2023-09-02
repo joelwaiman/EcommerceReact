@@ -33,7 +33,7 @@ const Congrats = () => {
                 </div>
             </div>
             <Link to="/">
-                <button onClick={finish}>Volver al Inicio</button>
+                <button style={style.button} onClick={finish}>Volver al Inicio</button>
             </Link>
         </div>
     )
