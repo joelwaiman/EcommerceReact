@@ -5,7 +5,7 @@ const CartEmpty = () => {
     return(
         <div style={styles.container}>
         <img style={styles.img} src={empty} alt="Carrito vacio" />
-        <p>Para agregar productos haz click <Link to="./">Aqui</Link></p>
+        <p>Para agregar productos haz click <Link to="/">Aqui</Link></p>
         </div>
 
     )
