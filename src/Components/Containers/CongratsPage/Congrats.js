@@ -13,9 +13,9 @@ const Congrats = () => {
     return (
         <div style={style.container}>
             <h1>Gracias por tu compra</h1>
-            <h2>Tu ID de compra es: {userInfo.id}</h2>
+            <h3>Tu ID de compra es: <span style={style.idText}>{userInfo.id}</span></h3>
             <div style={style.containerInfo}>
-                <div style={style.infoBuy}>
+                <div key={userInfo.id} style={style.infoBuy}>
                     <h4>Detalles de la compra</h4>
                     <p>Nombre: {userInfo.nombre}</p>
                     <p>Apellido: {userInfo.apellido}</p>

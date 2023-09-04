@@ -10,6 +10,11 @@ export const style = {
         borderRadius: 10,
         marginTop: 35,
     },
+    idText:{
+        backgroundColor: '#DDE6ED',
+        borderRadius: 3,
+        padding: '0 6px'
+    },
     containerInfo:{
         display: 'flex',
         flexDirection: 'row',
