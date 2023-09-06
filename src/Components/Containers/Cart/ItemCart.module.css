@@ -1,0 +1,27 @@
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #f6f6f6;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.img {
+    width: 75px;
+    height: 75px;
+}
+
+.delete {
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+@media(max-width: 475px){
+    .contenedor{
+        font-size: 12px;
+    }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../Assets/Logo.png";
-import { style } from "./Header.style"
+import styles from "./Header.module.css"
 import { CartWidget } from "../CartWidget/CartWidget";
 import { NavLink, Link } from "react-router-dom";
 
@@ -12,22 +12,22 @@ const Header = () => {
   ];
 
     return (
-        <header style={style.container}>
+        <header className={styles.container}>
             <Link to="/">
-                <img style={style.img} src={Logo} alt="Logo Tienda" />
+                <img className={styles.img} src={Logo} alt="Logo Tienda" />
             </Link>
             
             <nav>
                 {categorias.map((categoria) => {
                     return <NavLink
                      key={categoria.id}
-                     style={style.categorias}
+                     className={styles.categorias}
                      to={categoria.ruta}
                      >
                         {categoria.nombre}
                         </NavLink>
                 })}</nav>
-                <Link to="/cart" style={style.count}>
+                <Link to="/cart" className={styles.count}>
                     <CartWidget/>
                 </Link>
                 

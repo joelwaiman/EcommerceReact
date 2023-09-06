@@ -1,0 +1,76 @@
+.container {
+    display: flex;
+    flex-direction: Column;
+    align-items: Center;
+    max-width: 60%;
+    margin: auto;
+    background-color: #f6f6f6;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 35px;
+}
+
+.idText {
+    background-color: #DDE6ED;
+    border-radius: 3px;
+    padding: 0 6px;
+}
+
+.containerInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem;
+    background-color: #e6e6e6;
+    border-radius: 5px;
+    padding: 15px 10px;
+}
+
+.infoBuy {
+    padding: 1rem;
+}
+
+.producto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.img {
+    width: 75px;
+    height: 75px;
+}
+
+.title {
+    margin: 10px;
+    max-width: 200px;
+    text-align: center;
+}
+
+.text {
+    margin: 10px;
+}
+
+.button {
+    margin: 1px 10px;
+    font-size: 17px;
+    padding: 0.5rem 2rem;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    background: #9DB2BF;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media(max-width: 475px){
+    .container{
+        max-width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+    .containerInfo{
+        flex-direction: column;
+    }
+}
