@@ -37,16 +37,21 @@ const ItemListContainer = () => {
 
     setLoading(true);
     getProducts();
-    
+
   }, [idCategory])
 
 
   return (
     <div style={styles.background}>
-      {<>{loading ?
-        <Spinner/>
-        :
-        <ItemList products={products} />}</>}
+      {
+        <>
+          {loading ?
+            <Spinner />
+            :
+            <ItemList products={products} />
+          }
+        </>
+      }
     </div>
   );
 };

@@ -19,16 +19,16 @@ export const ItemDetailContainer = () => {
     const product = doc(productCollection, id);
 
     const getProducts = async () => {
-      try{
+      try {
         const item = await getDoc(product)
         setProduct({
           ...item.data(),
-          id:item.id,
+          id: item.id,
         })
-      } catch{
+      } catch {
         console.log("error");
       }
-      finally{
+      finally {
         setLoading(false)
       }
     }; getProducts()
@@ -37,7 +37,15 @@ export const ItemDetailContainer = () => {
 
   return (
     <>
-      {<>{loading ? <Spinner/> : <ItemDetail product={product} />}</>}
+      {
+        <>
+          {loading ?
+            <Spinner />
+            :
+            <ItemDetail product={product} />
+          }
+        </>
+      }
     </>
   );
 };

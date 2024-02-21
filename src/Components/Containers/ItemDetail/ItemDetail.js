@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../../../CustomContext";
 
 const ItemDetail = ({ product }) => {
+
   const [showItemCount, setshowItemCount] = useState(false)
   const { addItem } = useContext(Context);
 
@@ -14,19 +15,21 @@ const ItemDetail = ({ product }) => {
   }
 
   return (
-    <div className={styles.card}>
+    <section className={styles.card}>
       <img className={styles.img} alt={product.title} src={product.image} />
       <div className={styles.infoContainer}>
         <p className={styles.title}>{product.title}</p>
         <p className={styles.price}>${product.price}</p>
         <span className={styles.text}>{product.description}</span>
-        {!showItemCount ? (
-          <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
-        ) : <Link to="/cart">
-          <button className={styles.button}>Finalizar Compra</button>
-        </Link>}
+        <div className={styles.buttonContainer}>
+          {!showItemCount ? (
+            <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
+          ) : <Link to="/cart">
+            <button className={styles.button}>Finalizar Compra</button>
+          </Link>}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
