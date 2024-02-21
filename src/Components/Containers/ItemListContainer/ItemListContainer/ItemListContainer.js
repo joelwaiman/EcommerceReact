@@ -34,7 +34,10 @@ const ItemListContainer = () => {
         setLoading(false)
       }
     };
-    getProducts()
+
+    setLoading(true);
+    getProducts();
+    
   }, [idCategory])
 
 

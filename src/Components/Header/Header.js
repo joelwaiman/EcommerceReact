@@ -16,6 +16,7 @@ const Header = () => {
 
     return (
         <header className={styles.container}>
+            <div className={styles.header}>
             <Link to="/">
                 <img className={styles.img} src={Logo} alt="Logo Tienda" />
             </Link>
@@ -33,7 +34,7 @@ const Header = () => {
             <Link to="/cart" className={styles.count}>
                 <CartWidget />
             </Link>
-
+            </div>
         </header>
     )
 }

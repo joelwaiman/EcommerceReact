@@ -1,8 +1,13 @@
 .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     background-color: #726A95;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: auto;
 }
 
 .img {
@@ -18,7 +23,7 @@
     transition: all 0.3s ease;
 }
 .categorias:hover{
-    background-color: #351F39;
+    background-color: rgb(53, 31, 57, 0.3);
     transition: all 0.3s ease;
 }
 
