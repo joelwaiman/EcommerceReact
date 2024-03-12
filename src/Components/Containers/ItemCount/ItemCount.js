@@ -17,10 +17,10 @@ export const ItemCount = ({stock, initial, onAdd}) => {
 
     return (
     <>
-        <div style={styles.count}>
-            <button style={styles.button} onClick = {HandlerClickRestar}>-</button>
-            <h3>{contador}</h3>
-            <button style={styles.button} onClick = {HandlerClickSumar}>+</button>
+        <div style={styles.countContainer}>
+            <button style={styles.Countbutton} onClick = {HandlerClickRestar}>-</button>
+            <h3 style={styles.count}>{contador}</h3>
+            <button style={styles.Countbutton} onClick = {HandlerClickSumar}>+</button>
         </div>
         <button disabled = {stock === 0} style={styles.button} onClick = {()=>onAdd(contador)}>
             <span>{stock === 0 ? "No tenemos stock" : "Agregar al carrito"}</span>
@@ -30,20 +30,33 @@ export const ItemCount = ({stock, initial, onAdd}) => {
 };
 
 const styles = {
-    count : {
+    countContainer : {
         display: 'flex',
         alignItems: 'center',
     },
+    count:{
+        margin: '0 6px'
+    },
     button : {
         cursor: 'pointer',
-        margin : '7px 10px' ,
+        width: 'fit-content',
+        margin : '7px 0' ,
         fontSize: 17,
-        padding: '0.5rem 2rem',
+        padding: '10px 15px',
         border: 'transparent',
-        boxShadow: '2px 2px 3px rgb(190, 190, 190)',
-        background: '#9DB2BF',
-        color: 'white',
-        borderRadius: 4,
+        background: '#EAEAEA',
+        color: 'black',
+        borderRadius: 20,
+    },
+    Countbutton : {
+        cursor: 'pointer',
+        margin : '7px 0' ,
+        fontSize: 17,
+        padding: '5px 15px',
+        border: 'transparent',
+        background: '#EAEAEA',
+        color: 'black',
+        borderRadius: 20,
     },
     
 }

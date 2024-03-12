@@ -9,9 +9,9 @@ const Header = () => {
     const location = useLocation();
 
     const categorias = [
-        { nombre: "Sneakers", id: 0, ruta: "/categoria/Sneakers" },
-        { nombre: "Buzos", id: 1, ruta: "/categoria/Buzos" },
-        { nombre: "Accesorios", id: 2, ruta: "/categoria/Accesorios" },
+        { nombre: "SNEAKERS", id: 0, ruta: "/categoria/Sneakers" },
+        { nombre: "BUZOS", id: 1, ruta: "/categoria/Buzos" },
+        { nombre: "ACCESORIOS", id: 2, ruta: "/categoria/Accesorios" },
     ];
 
     return (

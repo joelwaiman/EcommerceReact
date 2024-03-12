@@ -53,15 +53,14 @@
 }
 
 .button {
-    margin: 1px 10px;
-    font-size: 17px;
-    padding: 0.5rem 2rem;
-    border: transparent;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    background: #9DB2BF;
-    color: white;
-    border-radius: 4px;
     cursor: pointer;
+    margin : 7px 0;
+    font-size: 17px;
+    padding: 10px 15px;
+    border: transparent;
+    background: #3C4048;
+    color: white;
+    border-radius: 20px;
 }
 
 @media(max-width: 475px){
