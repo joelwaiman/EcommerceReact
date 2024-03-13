@@ -44,7 +44,7 @@ const styles = {
         fontSize: 17,
         padding: '10px 15px',
         border: 'transparent',
-        background: '#EAEAEA',
+        background: '#EEEEEE',
         color: 'black',
         borderRadius: 20,
     },

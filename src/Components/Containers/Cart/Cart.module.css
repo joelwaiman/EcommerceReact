@@ -15,7 +15,7 @@
     font-size: 17px;
     padding: 10px 15px;
     border: transparent;
-    background: #3C4048;
+    background-color: var(--dark-button);
     color: white;
     border-radius: 20px
 }

@@ -1,5 +1,5 @@
 .container {
-    background-color: #726A95;
+    background-color: var(--main-bg-color);
 }
 
 .header{
@@ -14,27 +14,35 @@
     max-width: 100px;
 }
 
+.nav{
+    display: flex;
+}
+
 .categorias {
+    position: relative;
     padding: 5px 10px;
     margin: 0 5px;
     text-decoration: none;
-    color: #FAF0E6;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-.categorias:hover{
-    background-color: rgb(53, 31, 57, 0.3);
-    transition: all 0.3s ease;
+    color: var(--light-button);
+    transition: all 0.5s ease;
+    &:hover{
+        text-decoration: underline var(--detail-color);
+        text-underline-offset: 5px;
+    }
 }
 
 .active{
     padding: 5px 10px;
     margin: 0 5px;
-    text-decoration: none;
+    text-decoration: underline var(--detail-color);
+    text-underline-offset: 5px;
     color: #FAF0E6;
-    background-color: #351F39;
     border-radius: 5px;
     transition: all 0.3s ease;
+}
+
+.countMobile{
+    display: none;
 }
 
 .count {
@@ -42,11 +50,13 @@
 }
 
 @media (max-width: 475px){
-    .container{
+    .header{
         flex-direction: column;
+        margin: auto;
+        width: 95%;
     }
-    nav{
-        padding: 5% 0;
+    .countMobile{
+        display: inline;
     }
     .count{
         display: none;
